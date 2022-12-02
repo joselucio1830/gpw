@@ -1,0 +1,13 @@
+<h1 class="text-danger">Error de Permissão</h1>
+<h2 class="text-warning">Antenção o usuário com perfil(s) <?php echo  implode(',',$this->roles);?>
+    não pode acessar <?php echo  $this->module;?>-><?php echo  $this->controller;?>-><?php echo  $this->action;?></h2>
+
+
+<?php
+if(implode(',',$this->roles)=='anonymous')
+{
+    ?>
+    <h4 class="text-info">Você nao esta Logado </h4>
+    <a href="<?php echo $this->url('auth')?>" class="btn btn-primary" > <i class="glyphicon glyphicon-log-in"></i> Autenticar-me</a>
+    <?php
+}
